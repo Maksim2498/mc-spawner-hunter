@@ -1,0 +1,7 @@
+name: SpawnerHunter 
+version: "${project.version}"
+description: Allows to collect spawners with silk touch
+author: maksim2498
+
+main: space.moontalk.mc.spawner_hunter.SpawnerHunter
+api-version: 1.13
