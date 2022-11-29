@@ -16,8 +16,8 @@ This is a small bukkit plugin making it possible to obtain spawners using silk t
 ## Download
 
 Go to [releases](https://github.com/Maksim2498/mc-spawner-hunter/releases) 
-section and dowload desired version.
+section and dowload a desired version.
 
 ## Installation
 
-Simply put downloaded .jar file in to the plugins folder.
+Simply put a downloaded .jar file in to the plugins folder.
