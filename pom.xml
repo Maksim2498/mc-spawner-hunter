@@ -19,17 +19,13 @@
             <id>papermc</id>
             <url>https://repo.papermc.io/repository/maven-public/</url>
         </repository>
-        <repository>
-            <id>moontalk-releases</id>
-            <url>https://repo.moontalk.space/repository/maven-releases/</url>
-        </repository>
     </repositories>
 
     <dependencies>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.19-R0.1-SNAPSHOT</version>
+            <version>1.20.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -71,11 +67,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <repository>
-            <id>moontalk-releases</id>
-            <url>https://repo.moontalk.space/repository/maven-releases/</url>
-        </repository>
-    </distributionManagement>
 </project>
