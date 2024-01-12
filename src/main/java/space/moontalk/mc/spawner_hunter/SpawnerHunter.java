@@ -4,7 +4,6 @@ import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
@@ -59,25 +58,20 @@ public class SpawnerHunter extends    JavaPlugin
         if (block.getType() != Material.SPAWNER)
             return;
 
-        val item       = event.getItemInHand();
-        val meta       = (BlockStateMeta) item.getItemMeta();
-        val state      = (CreatureSpawner) meta.getBlockState();
-        val blockState = (CreatureSpawner) block.getState();
+        val item        = event.getItemInHand();
+        val meta        = (BlockStateMeta) item.getItemMeta();
+        val state       = (CreatureSpawner) meta.getBlockState();
+        val newState    = (CreatureSpawner) block.getState(false);
+        val spawnedType = state.getSpawnedType();
 
-        blockState.setDelay(state.getDelay());
-        blockState.setMaxNearbyEntities(state.getMaxNearbyEntities());
-        blockState.setMaxSpawnDelay(state.getMaxSpawnDelay());
-        blockState.setMinSpawnDelay(state.getMinSpawnDelay());
-        blockState.setRequiredPlayerRange(state.getRequiredPlayerRange());
-        blockState.setSpawnCount(state.getSpawnCount());
-        blockState.setSpawnRange(state.getSpawnRange());
-        blockState.setSpawnedType(state.getSpawnedType());
+        newState.setSpawnedType(spawnedType);
     }
 
     @Override
     public void onEnable() {
         val server  = getServer();
         val manager = server.getPluginManager();
+
         manager.registerEvents(this, this);
     }
 }
