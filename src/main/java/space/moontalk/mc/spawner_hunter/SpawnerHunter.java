@@ -1,5 +1,8 @@
 package space.moontalk.mc.spawner_hunter;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.NamedTextColor;
+
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.block.CreatureSpawner;
@@ -44,10 +47,15 @@ public class SpawnerHunter extends    JavaPlugin
         val state    = (CreatureSpawner) block.getState();
         val dropItem = new ItemStack(type);
         val meta     = (BlockStateMeta) dropItem.getItemMeta();
+        val name     = Component.text("Monster Spawner")
+                                .color(NamedTextColor.DARK_PURPLE);
 
+        meta.displayName(name);
         meta.setBlockState(state);
         dropItem.setItemMeta(meta);
+
         world.dropItemNaturally(location, dropItem);
+
         event.setExpToDrop(0);
     }
 
